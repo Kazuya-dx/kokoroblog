@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% load customfilters %}
+{% block content %}
+
+<div class="main">
+  <center>
+    {% if word == '' %}
+      <div class="top_blog__title">{{ selected_tag.name }} に関する記事</div>
+    {% else %}
+      <div class="top_blog__title"><font color="#789">{{ word }}</font> を含む {{ selected_tag.name }} に関する記事</div>
+    {% endif %}
+    <div class="top_blog__count">記事数: {{ object_list.count }}</div>
+    {% for blog in object_list %}
+    <div class="top_blog">
+      <div class="top_blog__tag"><a href="{% url 'blog:tag_blog' pk=blog.tag.name %}">{{ blog.tag.name }}</a></div>
+      <div class="top_blog__time">最終更新日: {{ blog.updated_datetime|date:"Y-m-j" }}</div>
+      <img src="{{ blog.photo.image.url }}" class="top_blog__image">
+      <div class="blog_title_css">{{ blog.title }}</div>
+      <div class="blog_subtitle_css">{{ blog.subtitle }}</div>
+      <div class="top_blog__more">
+        <a href="{% url 'blog:detail' pk=blog.id %}">READ MORE</a>
+      </div>
+    </div>
+    {% endfor %}
+
+    {% if object_list.count|parity %}
+    <div class="top_blog">
+      <div class="top_blog__tag">広告</div>
+      <div class="top_blog__time">スポンサーズリンク</div>
+      <img src="{% static 'css/images/girl.bmp' %}" class="top_blog__image">
+      <div class="blog_title_css">広告タイトル</div>
+      <div class="blog_subtitle_css">広告サブタイトル</div>
+      <div class="top_blog__more">
+        <a href="">READ MORE</a>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if object_list.count == 0 %}
+    <p>まだ記事がありません</p>
+    {% endif %}
+
+    <ul class="pagination">
+      <!-- 前へ の部分 -->
+       {% if page_obj.has_previous %}
+           <li><a href="?page={{ page_obj.previous_page_number }}"><</a></li>
+       {% endif %}
+
+       <!-- 数字の部分 -->
+       {% for num in page_obj.paginator.page_range %}
+           {% if page_obj.number == num %}
+               <li><a class="active">{{ num }}</a></li>
+           {% else %}
+               <li><a href="?page={{ num }}">{{ num }}</a></li>
+           {% endif %}
+       {% endfor %}
+
+       <!-- 次へ の部分 -->
+       {% if page_obj.has_next %}
+           <li><a href="?page={{ page_obj.next_page_number }}">></a></li>
+       {% endif %}
+    </ul>
+  </center>
+</div>
+
+{% endblock %}

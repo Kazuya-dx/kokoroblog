@@ -1,0 +1,42 @@
+<p>技術サイトでよく見るサンプルコードをオシャレにしたいと思いませんか。</p>
+<p>見辛いサンプルコードでは閲覧者にストレスを与えてしまいますよね。</p>
+<p>今回は私が作ったサンプルコードを紹介します。</p>
+
+<h2>HTML・CSS サンプルコード</h2>
+<p>自分がこのブログで使用するために作成したCSSは以下の通りです。</p>
+
+<div class="blog_detail__code1">
+  <div class="blog_detail__code1_title">CSS</div>
+  <pre><code>
+    <font color="orange">.code1</font> { /* 短めのコード表示用　*/
+      position: relative;
+      width: 100%;
+      margin: 2.0em 0;
+      padding: 0.5em 0;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.10em;
+      line-height: 1.8em;
+      color: #FFF;
+      background-color: #555;
+    }
+
+    <font color="orange">.code1__title</font> {
+      position: absolute;
+      text-align: center;
+      font-size: 13px;
+      width: 20%;
+      background-color: #F4A460;
+    }
+  </code></pre>
+  </div>
+<p>タイトルとコードをそれぞれ分けています。</p>
+<p>タイトルはコードがどのディレクトリに属するか、</p>
+<p>また何の言語を使用しているかを表示します。</p>
+<p>短いコード用のデザインなので文字の大きさ・字間・行間を大きめに取っています。</p>
+<br>
+<p> 文字の大きさ　=> font-size: ~~~; </p>
+<p> 字間　=> letter-spacing: ~~~; </p>
+<p> 行間　=> line-height: ~~; </p>
+<br>
+<p> ※クラス名は"CSS設計の教科書"という本を参考にしています。</p>

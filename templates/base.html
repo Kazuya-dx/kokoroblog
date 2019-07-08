@@ -1,0 +1,139 @@
+{% load static %}
+{% load customfilters %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>KokoroBlog</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+  <!-- JavaScript -->
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+</head>
+
+<body>
+  <ul class="header">
+    <li class="header__title"><a href="{% url 'blog:index' %}">KokoroBlog</a></li>
+    <li class="header__item"><a href="{% url 'blog:index' %}">Home</a></li>
+    <li class="header__item"><a href="{% url 'blog:about' %}">About</a></li>
+    <li class="header__item"><a href="{% url 'blog:test' %}">Test</a></li>
+    <li class="header__item"></li>
+  </ul>
+
+  {% block content %}
+  <div class="background">
+    <div class="background__text">
+      <h2>シンのプログラミング学習ブログ</h2>
+      <h4>Python, Django, HTML, CSS, JavaScript, JQuery etc の備忘録</h4>
+    </div>
+  </div>
+
+  <div class="subtext">
+    <h2>Think globally, act locally</h2>
+    <h3>自分が勉強して身につけたスキルを綴り、読者とテラダシンが共にレベルアップすることを願っています。</h3>
+  </div>
+
+  <!-- 広告の仮置き -->
+  <!-- <p class="test_ads">ここに広告を表示</p> -->
+
+  <!-- カラム -->
+  <div class="wrap">
+    <!-- main部分 -->
+    <div class="main">
+      <center>
+        {% if word == '' %}
+          <div class="top_blog__title">最近の記事</div>
+          <div class="top_blog__count">全記事数: {{ blogs.count }}</div>
+        {% else %}
+          <div class="top_blog__title"><font color="#789">{{ word }}</font> を含む記事</div>
+          <div class="top_blog__count">全記事数: {{ object_list.count }}</div>
+        {% endif %}
+        {% for blog in object_list %}
+        <div class="top_blog">
+          <div class="top_blog__tag"><a href="{% url 'blog:tag_blog' pk=blog.tag.name %}">{{ blog.tag.name }}</a></div>
+          <div class="top_blog__time">最終更新日: {{ blog.updated_datetime|date:"Y-m-j" }}</div>
+          <img src="{{ blog.photo.image.url }}" class="top_blog__image">
+          <div class="blog_title_css">{{ blog.title }}</div>
+          <div class="blog_subtitle_css">{{ blog.subtitle }}</div>
+          <div class="top_blog__more">
+            <a href="{% url 'blog:detail' pk=blog.id %}">READ MORE</a>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% if object_list.count|parity %}
+        <div class="top_blog">
+          <div class="top_blog__tag">広告</div>
+          <div class="top_blog__time">スポンサーズリンク</div>
+          <img src="{% static 'css/images/girl.bmp' %}" class="top_blog__image">
+          {{ blog.title|safe }}
+          {{ blog.subtitle|safe }}
+          <div class="top_blog__more">
+            <a href="">READ MORE</a>
+          </div>
+        </div>
+        {% endif %}
+
+        <ul class="pagination">
+          <!-- 前へ の部分 -->
+           {% if page_obj.has_previous %}
+               <li><a href="?page={{ page_obj.previous_page_number }}"><</a></li>
+           {% endif %}
+
+           <!-- 数字の部分 -->
+           {% for num in page_obj.paginator.page_range %}
+               {% if page_obj.number == num %}
+                   <li><a class="active">{{ num }}</a></li>
+               {% else %}
+                   <li><a href="?page={{ num }}">{{ num }}</a></li>
+               {% endif %}
+           {% endfor %}
+
+           <!-- 次へ の部分 -->
+           {% if page_obj.has_next %}
+               <li><a href="?page={{ page_obj.next_page_number }}">></a></li>
+           {% endif %}
+        </ul>
+      </center>
+    </div>
+
+  {% endblock %}
+
+  <!-- sidemenu -->
+  <div class="side_menu">
+    <div class="profile">
+      <b>このブログの作者</b><br>
+      <img src="{% static 'css/images/profile-img.jpg' %}" class="profile__image"><br>
+      <div class="profile__text">
+      テラダ・シン<br>
+      <br>
+      現役大学3年生。現在はPythonのWEBフレームワークであるDjangoを主に学習しています。このブログもDjangoで作成しています。
+      HTML, CSS, JavaScript, JQuery, Pythonを学習し、情報を発信していきます。
+      </div>
+    </div>
+
+    <div class="side_tag">
+      <div class="side_tag__title">記事を検索する</div>
+      <form method="get" action="" name="search_blog">
+        <input type="search" id="filter_word" name="word" placeholder="ワードを入力" size="30">
+        <button class="search_button" id="filter">検索</button>
+      </form>
+    </div>
+
+    <div class="side_tag">
+      <div class="side_tag__title">タグで記事を絞り込む</div>
+      {% for tag in tags %}
+        <div class="side_tag__btn">
+          <a href="{% url 'blog:tag_blog' pk=tag.name %}">{{ tag.name }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

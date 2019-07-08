@@ -1,0 +1,563 @@
+/* CSS設計のルール
+1. @@--@@ => 装飾
+2. @@__@@ => 要素関係
+構造と見た目の class は分ける
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+button {
+  background:none;
+  border:0;
+  cursor: pointer;
+}
+form {
+  display: inline-block;
+}
+input[type=search] {
+  margin-top: 1.5em;
+  margin-bottom: 0;
+  width: 200px;
+  height: 30px;
+  border: 1px solid #555;
+  font-size: 0.8em;
+}
+.search_button {
+  height: 30px;
+  width: 50px;
+  border: 1px solid #555;
+  font-size: 0.8em;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  margin-top: 5rem;
+  padding-top: 0.5em;
+  text-align: center;
+  font-size: 12px;
+  color: #FFF;
+  background-color: #000;
+}
+/* カラム操作 スマホ */
+@media only screen and (max-width: 1024px){
+  .main {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  .side_menu {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* カラム操作 PC */
+@media only screen and (min-width: 1024px), print {
+  .wrap {
+    overflow: hidden;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main {
+    float: left;
+    width: 70%;
+  }
+  .side_menu {
+    float: right;
+    width: 30%;
+  }
+}
+
+/* プロフィール欄 */
+.profile {
+  width: 100%;
+  height: 400px;
+  margin-top: 50px;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  text-align: center;
+  font-size: 12px;
+  background-color: #f5f5f5;
+}
+  .profile__image {
+    margin: 10px;
+    border-radius: 400px;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
+  .profile__text {
+    text-align: center;
+    line-height: 1.8em;
+    margin: 0 1.5em;
+  }
+
+/* サイドバーのタグ */
+.side_tag {
+  width: 100%;
+  height: 70px;
+  margin-top: 50px;
+  padding-top: 1em;
+  padding-bottom: 3em;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+  .side_tag__title {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 1.5em 0.5em 1.5em;
+  }
+  .side_tag__btn {
+    display: inline-block;
+    height: 30px;
+    width: 5.0rem;
+    margin-top: 0.4em;
+    margin-left: 0.8em;
+    color: #FFF;
+    font-size: 0.8em;
+    line-height: 2.5;
+    background-color: #345;
+  }
+  .side_tag__btn > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #FFF;
+  }
+/* ヘッダー部分のスタイルシート */
+.header {
+  display: table;
+  margin: 0;
+  width: 100%;
+  table-layout: fixed;
+  background-color: #000;
+}
+  .header__title {
+    display: table-cell;
+    width: 50%;
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+    color: #FFF;
+  }
+  .header__title > a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFF;
+  }
+  .header__item {
+    display: table-cell;
+  }
+  .header__item > a {
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFF;
+  }
+
+/* 検索部分の背景等スタイルシート */
+.background {
+  display: block;
+  position: relative;
+  background-color: #EEE;
+  background-image: url(images/backimg.jpg);
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  text-align: center;
+}
+  .background__text {
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    padding-top: 10rem;
+    width: 100%;
+    height: 60%;
+    color: #FFF;
+    background-color:rgba(0,0,0,0.3);
+  }
+  .background__text > h2 {
+    margin: 0.4em 0 0 0;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .background__text > h4 {
+    margin-top: 0.3em;
+    font-size: 15px;
+  }
+
+/* サブテキスト */
+.subtext {
+  width: 100%;
+  height: 150px;
+  color: #FFF;
+  background-color: #020000;
+  text-align: center;
+}
+  .subtext > h2 {
+    margin-top: 0;
+    padding-top: 1.5em;
+    font-size: 20px;
+  }
+  .subtext > h3 {
+    font-size: 15px;
+  }
+
+/* 広告 */
+.test_ads {
+  width: 85%;
+  height: 100px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 1em;
+  text-align: center;
+  background-color: #DCB;
+}
+
+/* トップページに表示するブログのスタイル */
+.top_blog {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  margin: 30px 20px 0 20px;
+  height: 400px;
+  width: 40%;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+  .top_blog__tag {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 30px;
+    width: 4.0rem;
+    color: #FFF;
+    font-size: 0.8em;
+    line-height: 2.5;
+    background-color: #345;
+  }
+  .top_blog__tag > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #FFF;
+  }
+  .top_blog__time {
+    position: absolute;
+    top: 11.5rem;
+    right: 0;
+    height: 25px;
+    width: 9rem;
+    color: #222;
+    font-size: 0.6em;
+    line-height: 2.0;
+    background-color: #f5f5f5;
+  }
+  .top_blog__title {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .top_blog__count {
+    font-size: 12px;
+  }
+    .blog_title_css {
+      margin-top: 0.5em;
+      padding: 0 1.0em;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+    .blog_subtitle_css {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      padding: 0 1.0em;
+      font-size: 0.8em;
+      color: #222;
+      line-height: 2.0;
+    }
+  .top_blog__image {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+  }
+  .top_blog__more {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 1.0em;
+    margin: auto;
+  }
+    .top_blog__more > a {
+      padding: 5px;
+      font-size: 0.8em;
+      text-decoration: none;
+      color: #222;
+      border: solid 1px black;
+    }
+
+.filter_word {
+  position:absolute;/*フォームの絶対位置*/
+  left:0;
+  top:0;
+  outline:0;/*クリック時の青い枠線消す*/
+  height:50px;/*検索ボックスの高さ*/
+  padding:0 10px;/*テキスト位置調整*/
+  border-radius:2px 0 0 2px;/*検索ボックスの角を丸める*/
+  background:#eee;/*検索ボックスの背景カラー*/
+}
+
+/* ページネーション */
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 2.0em 15.0em;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+ul.pagination li a.active {
+    background-color: #456;
+    color: white;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+
+
+/* Detail 記事のCSS */
+.blog_detail {
+  margin-top: 3.0em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+  .blog_detail__time {
+    text-align: center;
+    font-size: 12px;
+  }
+  .blog_detail__tag {
+    display: inline-block;
+    height: 30px;
+    width: 5.0rem;
+    margin-top: 0.2em;
+    margin-left: 0.8em;
+    color: #FFF;
+    font-size: 0.8em;
+    line-height: 2.5;
+    text-align: center;
+    background-color: #345;
+  }
+  .blog_detail__tag > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #FFF;
+  }
+  .blog_detail__image {
+    width: 100%;
+    margin: 1.0em 0 2.0em 0;
+    height: 350px;
+    object-fit: cover;
+  }
+  .blog_detail__image2 {
+    width: 80%;
+    margin: 1.0em 0 2.0em 0;
+    height: 300px;
+    object-fit: contain;
+  }
+  .blog_detail > h1 {
+    font-size: 22px;
+    border-bottom: solid 3px #333;
+    text-align: center;
+    letter-spacing: 0.10em;
+  }
+  .blog_detail > h2 {
+    display: flex;
+    align-items: center;
+    margin: 2.0em 1.0em 1.5em 1.0em;
+    padding-left: 1.0em;
+    font-size: 20px;
+    letter-spacing: 0.22em;
+    height: 2.5em;
+    border-left: solid 10px #789;
+    background-color: #f5f5f5;
+  }
+  .blog_detail > h3 {
+    display: flex;
+    align-items: center;
+    margin: 2.0em 1.0em 1.5em 1.0em;
+    padding-left: 1.0em;
+    font-size: 18px;
+    letter-spacing: 0.22em;
+    height: 2.2em;
+    border-left: solid 10px #ABC;
+  }
+  .blog_detail > p {
+    margin-left: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    font-size: 16px;
+    letter-spacing: 0.10em;
+    color: #222;
+  }
+  .blog_detail__code1 { /* 短めのコード　*/
+    position: relative;
+    width: 100%;
+    margin: 2.0em 0;
+    padding: 0.5em 0;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.10em;
+    line-height: 1.8em;
+    color: #FFF;
+    background-color: #555;
+  }
+    .blog_detail__code1_title {
+      position: absolute;
+      text-align: center;
+      font-size: 0.8rem;
+      width: 20%;
+      background-color: #F4A460;
+    }
+  .blog_detail__code2 {
+    width: 100%;
+    margin: 1.8em 0;
+    font-size: 1.1em;
+    letter-spacing: 0.10em;
+    line-height: 1.8em;
+    color: #111;
+    background-color: #f0f0f0;
+  }
+
+
+/* テスト用 */
+.testheader {
+  display: table;
+  margin: 0;
+  width: 100%;
+  table-layout: fixed;
+  background-color: #000;
+}
+  .testheader__title {
+    display: table-cell;
+    padding: 40px 0;
+    width: 50%;
+    font-size: 50px;
+    text-align: left;
+    font-weight: bold;
+    color: #FFF;
+  }
+  .testheader__title > a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFF;
+  }
+  .testheader__item {
+    display: table-cell;
+  }
+  .testheader__item > a {
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #FFF;
+  }
+
+/* test */
+.hamburger {
+  position: absolute;
+  right: 1.0em;
+  margin: 1.2em;
+  width: 80px;
+  height: 100px;
+  cursor: pointer;
+}
+.hamburger_line1 {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  margin-top: 25px;
+  background-color: #EEE;
+}
+.hamburger_line2 {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  margin-top: 50px;
+  background-color: #EEE;
+}
+.hamburger_line3 {
+  position: absolute;
+  height: 8px;
+  width: 100%;
+  margin-top: 75px;
+  background-color: #EEE;
+}
+.back_black {
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+}
+.hamburger_menu {
+  position: fixed;
+  right: -450px;
+  top: 0;
+  padding: 0;
+  background-color: #000;
+  color: #FFF;
+  display: block;
+  width: 400px;
+  height: 100%;
+}
+.hamburger_menu > ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hamburger_menu > li{
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+.hamburger_menu > li > a{
+  display: block;
+  padding-top: 100px;
+  background-color: #000;
+  color: #FFF;
+  font-size: 2.0em;
+  text-decoration: none;
+  text-align: center;
+}

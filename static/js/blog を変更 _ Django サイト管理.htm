@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://127.0.0.1:8000/admin/blog/blog/10/change/ -->
+<html lang="jp-JP"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>blog を変更 | Django サイト管理</title>
+<link rel="stylesheet" type="text/css" href="./blog を変更 _ Django サイト管理_files/base.css">
+<link rel="stylesheet" type="text/css" href="./blog を変更 _ Django サイト管理_files/forms.css">
+
+
+<script type="text/javascript" src="./blog を変更 _ Django サイト管理_files/saved_resource"></script>
+<script type="text/javascript" src="./blog を変更 _ Django サイト管理_files/jquery.js"></script>
+<script type="text/javascript" src="./blog を変更 _ Django サイト管理_files/jquery.init.js"></script>
+<script type="text/javascript" src="./blog を変更 _ Django サイト管理_files/core.js"></script>
+<script type="text/javascript" src="./blog を変更 _ Django サイト管理_files/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="./blog を変更 _ Django サイト管理_files/actions.js"></script>
+<script type="text/javascript" src="./blog を変更 _ Django サイト管理_files/urlify.js"></script>
+<script type="text/javascript" src="./blog を変更 _ Django サイト管理_files/prepopulate.js"></script>
+<script type="text/javascript" src="./blog を変更 _ Django サイト管理_files/xregexp.js"></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./blog を変更 _ Django サイト管理_files/responsive.css">
+    
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+
+<body class=" app-blog model-blog change-form" data-admin-utc-offset="32400">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name"><a href="http://127.0.0.1:8000/admin/">Django 管理サイト</a></h1>
+
+        </div>
+        
+        
+        <div id="user-tools">
+            
+                ようこそ
+                <strong>kazumanzi</strong>.
+            
+            
+                
+                    <a href="http://127.0.0.1:8000/">サイトを表示</a> /
+                
+                
+                    
+                    
+                
+                
+                <a href="http://127.0.0.1:8000/admin/password_change/">パスワードの変更</a> /
+                
+                <a href="http://127.0.0.1:8000/admin/logout/">ログアウト</a>
+            
+        </div>
+        
+        
+        
+    </div>
+    <!-- END Header -->
+    
+<div class="breadcrumbs">
+<a href="http://127.0.0.1:8000/admin/">ホーム</a>
+› <a href="http://127.0.0.1:8000/admin/blog/">Blog</a>
+› <a href="http://127.0.0.1:8000/admin/blog/blog/">Blogs</a>
+› 【JQuery】文字を横にずらすアニメーション【簡単】
+</div>
+
+    
+
+    
+        
+    
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <h1>blog を変更</h1>
+        <div id="content-main">
+
+
+  <ul class="object-tools">
+    
+      
+
+<li>
+    
+    <a href="http://127.0.0.1:8000/admin/blog/blog/10/history/" class="historylink">履歴</a>
+</li>
+
+
+
+    
+  </ul>
+
+
+<form action="http://127.0.0.1:8000/admin/blog/blog/10/change/" method="post" id="blog_form" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="SqJdYEdkZdTZNOc896fiBKny2BBcROMCpeNZKkQ1dx94ox9JtYodApFNWrDdAbvD">
+<div>
+
+
+
+
+
+
+
+  <fieldset class="module aligned ">
+    
+    
+    
+        <div class="form-row field-title">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_title">Title:</label>
+                        
+                            <input type="text" name="title" value="【JQuery】文字を横にずらすアニメーション【簡単】" class="vTextField" maxlength="150" required="" id="id_title">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-subtitle">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_subtitle">Subtitle:</label>
+                        
+                            <textarea name="subtitle" cols="40" rows="10" class="vLargeTextField" maxlength="1000" id="id_subtitle">文字を横にずらすアニメーションを作成したので、記事として残しておきます。</textarea>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-text">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_text">Text:</label>
+                        
+                            <textarea name="text" cols="40" rows="10" class="vLargeTextField" maxlength="10000" id="id_text">&lt;p&gt;とても初歩的なことですが、備忘録として残しておきます。&lt;/p&gt;
+&lt;p&gt;※本当に簡単です。&lt;/p&gt;
+&lt;br&gt;
+
+&lt;h2&gt;サンプルコード&lt;/h2&gt;
+
+&lt;div class="blog_detail__code1"&gt;
+  &lt;div class="blog_detail__code1_title"&gt;CSS&lt;/div&gt;
+  &lt;pre&gt;&lt;code&gt;
+      $(function(){
+        $('.css_class').on('mouseover', function(){
+          $(this).stop(true).animate({
+            'padding-left': '30px'
+          }, 300);
+        });
+        $('.css_class').on('mouseout', function(){
+          $(this).stop(true).animate({
+            'padding-left': '0'
+         }, 300);
+        });
+      }); 　
+  &lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;br&gt;
+&lt;p&gt;padding-leftを追加するだけです。&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;.on('mouseover') がマウスが要素の上に乗った時に&lt;/p&gt;
+&lt;p&gt;起動するアニメーションであり、&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;.on('mouseout') がマウスが要素から離れた時に&lt;/p&gt;
+&lt;p&gt;起動するアニメーションです。&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;JQueryの基本的な操作はまた後日まとめたいと思います。&lt;/p&gt;</textarea>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-tag">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_tag">Tag:</label>
+                        
+                            <div class="related-widget-wrapper">
+    <select name="tag" required="" id="id_tag">
+  <option value="">---------</option>
+
+  <option value="1">Python</option>
+
+  <option value="2">Django</option>
+
+  <option value="3">CSS</option>
+
+  <option value="4">JavaScript</option>
+
+  <option value="5" selected="">JQuery</option>
+
+</select>
+    
+        <a class="related-widget-wrapper-link change-related" id="change_id_tag" data-href-template="/admin/blog/tag/__fk__/change/?_to_field=id&amp;_popup=1" title="選択された tag の変更" href="http://127.0.0.1:8000/admin/blog/tag/5/change/?_to_field=id&amp;_popup=1"><img src="./blog を変更 _ Django サイト管理_files/icon-changelink.svg" alt="変更"></a><a class="related-widget-wrapper-link add-related" id="add_id_tag" href="http://127.0.0.1:8000/admin/blog/tag/add/?_to_field=id&amp;_popup=1" title="tag の追加"><img src="./blog を変更 _ Django サイト管理_files/icon-addlink.svg" alt="追加"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_tag" data-href-template="/admin/blog/tag/__fk__/delete/?_to_field=id&amp;_popup=1" title="選択された tag を削除" href="http://127.0.0.1:8000/admin/blog/tag/5/delete/?_to_field=id&amp;_popup=1"><img src="./blog を変更 _ Django サイト管理_files/icon-deletelink.svg" alt="削除"></a>
+    
+</div>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-photo">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_photo">Photo:</label>
+                        
+                            <div class="related-widget-wrapper">
+    <select name="photo" required="" id="id_photo">
+  <option value="">---------</option>
+
+  <option value="4">00_cat</option>
+
+  <option value="5">00_design</option>
+
+  <option value="6">00_bird</option>
+
+  <option value="7" selected="">00_flower</option>
+
+  <option value="8">01_flower</option>
+
+  <option value="9">00_rain</option>
+
+  <option value="10">00_game</option>
+
+  <option value="11">01_game</option>
+
+</select>
+    
+        <a class="related-widget-wrapper-link change-related" id="change_id_photo" data-href-template="/admin/blog/photo/__fk__/change/?_to_field=id&amp;_popup=1" title="選択された photo の変更" href="http://127.0.0.1:8000/admin/blog/photo/7/change/?_to_field=id&amp;_popup=1"><img src="./blog を変更 _ Django サイト管理_files/icon-changelink.svg" alt="変更"></a><a class="related-widget-wrapper-link add-related" id="add_id_photo" href="http://127.0.0.1:8000/admin/blog/photo/add/?_to_field=id&amp;_popup=1" title="photo の追加"><img src="./blog を変更 _ Django サイト管理_files/icon-addlink.svg" alt="追加"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_photo" data-href-template="/admin/blog/photo/__fk__/delete/?_to_field=id&amp;_popup=1" title="選択された photo を削除" href="http://127.0.0.1:8000/admin/blog/photo/7/delete/?_to_field=id&amp;_popup=1"><img src="./blog を変更 _ Django サイト管理_files/icon-deletelink.svg" alt="削除"></a>
+    
+</div>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+
+<input type="submit" value="保存" class="default" name="_save">
+
+    
+    <p class="deletelink-box"><a href="http://127.0.0.1:8000/admin/blog/blog/10/delete/" class="deletelink">削除</a></p>
+
+
+<input type="submit" value="保存してもう一つ追加" name="_addanother">
+<input type="submit" value="保存して編集を続ける" name="_continue">
+
+
+</div>
+
+
+
+    <script type="text/javascript" id="django-admin-form-add-constants" src="./blog を変更 _ Django サイト管理_files/change_form.js">
+    </script>
+
+
+
+
+<script type="text/javascript" id="django-admin-prepopulated-fields-constants" src="./blog を変更 _ Django サイト管理_files/prepopulate_init.js" data-prepopulated-fields="[]">
+</script>
+
+
+</div>
+</form></div>
+
+        
+        <br class="clear">
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+
+
+</body></html>
